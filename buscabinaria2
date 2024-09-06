@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    int numero;
+    char nome[100];
+} Livro;
+
+int compara(const void *a, const void *b) {
+    return ((Livro *)a)->numero - ((Livro *)b)->numero;
+}
+
+int buscaBinaria(Livro *livros, int inicio, int fim, int chave) {
+    if (inicio > fim)
+        return -1;
+
+    int meio = (inicio + fim) / 2;
+    
+    if (livros[meio].numero == chave)
+        return meio;
+    else if (livros[meio].numero > chave)
+        return buscaBinaria(livros, inicio, meio - 1, chave);
+    else
+        return buscaBinaria(livros, meio + 1, fim, chave);
+}
+
+int main() {
+    int quantidadelivros, m;
+    
+    scanf("%d", &quantidadelivros);
+    
+    Livro livro1[quantidadelivros]; 
+
+    for (int i = 0; i < quantidadelivros; i++) {
+        scanf("%d %[^\n]s", &livro1[i].numero, livro1[i].nome);
+    }
+    
+    
+    scanf("%d", &m);
+
+    int posicao = buscaBinaria(livro1, 0, quantidadelivros - 1, m);
+
+    if (posicao != -1) {
+        printf("Posição: %d, Livro: %s\n", posicao + 1, livro1[posicao].nome);
+    } else {
+        printf("Livro não encontrado.\n");
+    }
+
+    return 0;
+}
+
