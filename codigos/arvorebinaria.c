@@ -102,15 +102,15 @@ int main() {
     }
     
     printf("Preordem: ");
-    preordem(arvore);
+    preordem(&arvore);
     printf("\n");
 
     printf("Ordem: ");
-    ordem(arvore);
+    ordem(&arvore);
     printf("\n");
 
     printf("Posordem: ");
-    posordem(arvore);
+    posordem(&arvore);
     printf("\n");
 
     return 0;
