@@ -26,9 +26,9 @@ no *inserir(no *arvore, int numero) {
 
 void imprimiordem(no *arvore) {
     if (arvore != NULL) {
-        imprimiordem(arvore->esquerda);
+        imprimiordem(&arvore->esquerda);
         printf("%d ", arvore->numero);
-        imprimiordem(arvore->direita);
+        imprimiordem(&arvore->direita);
     }
 }
 
@@ -41,10 +41,10 @@ int main() {
     for (int i = 0; i < N; i++) {
         int num;
         scanf("%d", &num);
-        arvore = inserir(arvore, num);
+        arvore = inserir(&arvore, num);
     }
 
-    imprimiordem(arvore);
+    imprimiordem(&arvore);
 
     return 0;
 }
