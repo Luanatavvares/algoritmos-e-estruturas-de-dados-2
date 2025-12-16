@@ -24,4 +24,12 @@ Ambas as estruturas foram empregadas na construção do índice invertido e post
 
 Para avaliar a eficiência das estruturas, foram implementados contadores de desempenho responsáveis por medir o número de comparações realizadas durante as operações de inserção e consulta.
 
-Essas métricas permitiram analisar o comportamento de cada estrutura em diferentes cenários, con
+Essas métricas permitiram analisar o comportamento de cada estrutura em diferentes cenários, considerando fatores como colisões na tabela hash e profundidade da árvore Patricia. Os resultados obtidos auxiliaram na compreensão das vantagens e limitações de cada abordagem.
+
+## Como Executar
+
+A compilação do projeto é realizada por meio do Makefile. No terminal, dentro do diretório do trabalho, execute:
+
+```bash
+make
+./programa
